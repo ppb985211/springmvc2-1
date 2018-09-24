@@ -24,4 +24,8 @@
     <update id="updateAdmin" parameterType="cap.model.Admin">
         update admin set username=#{username},password=#{password} where id=#{id}
     </update>
+    <select id="findByPage" resultMap="cap.mapper.AdminMapper.BaseResultMap">
+        select * from admin
+        limit #{start},#{pageSize}
+    </select>
 </mapper>
